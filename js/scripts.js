@@ -221,13 +221,25 @@ $(document).ready(function(){
 			}
 		};
 
-		$(window).on("scroll", function() {
-			if ($(document).scrollTop() > 50) {
-				$(".header").addClass("_scroll");
+		headerBg();
+		$(window).on("resize", function() {
+			headerBg();
+		});
+
+		function headerBg() {
+			if ($(window).width() <= 768) {
+				$(window).on("scroll", function() {
+					if ($(document).scrollTop() > 50) {
+						$(".header").addClass("_scroll");
+					} else {
+						$(".header").removeClass("_scroll");
+					}
+				});
 			} else {
+				$(window).unbind("scroll");
 				$(".header").removeClass("_scroll");
 			}
-		});
+		};
 
 		for (let i = 0; i < sidebar_item.length; i++) {
 			k = i + 1;
