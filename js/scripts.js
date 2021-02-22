@@ -189,6 +189,7 @@ $(window).on("load", function() {
 });
 $(document).ready(function(){
 	if ($(".sidebar").length > 0) {
+		let sidebar = $(".sidebar");
 		let sidebar_btn = $(".sidebar-menu__btn");
 		let sidebar_body = $(".sidebar-menu__body");
 		let sidebar_area = $(".sidebar__area");
@@ -201,14 +202,17 @@ $(document).ready(function(){
 		});
 		function sidebarActions(action) {
 			if (action == "open") {
+				sidebar.addClass("_active");
 				sidebar_btn.addClass("_active");
 				sidebar_body.addClass("_active");
 			}
 			if (action == "close") {
+				sidebar.removeClass("_active");
 				sidebar_btn.removeClass("_active");
 				sidebar_body.removeClass("_active");
 			}
 			if (action == "toggle") {
+				sidebar.toggleClass("_active");
 				sidebar_btn.toggleClass("_active");
 				sidebar_body.toggleClass("_active");
 			}
@@ -216,6 +220,14 @@ $(document).ready(function(){
 				console.log("Не корректное значение для функции! | Incorrect value for function!");
 			}
 		};
+
+		$(window).on("scroll", function() {
+			if ($(document).scrollTop() > 50) {
+				$(".header").addClass("_scroll");
+			} else {
+				$(".header").removeClass("_scroll");
+			}
+		});
 
 		for (let i = 0; i < sidebar_item.length; i++) {
 			k = i + 1;
