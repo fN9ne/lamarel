@@ -182,11 +182,11 @@ function move(){
 //Вызываем функцию
 move();
 */;
-/*$(window).on("load", function() {
+$(window).on("load", function() {
 	setTimeout(() => {
 		$(".preloader").fadeOut(1000);
 	}, 2500); 
-});*/
+});
 $(document).ready(function(){
 	if ($(".sidebar").length > 0) {
 		let sidebar_btn = $(".sidebar-menu__btn");
