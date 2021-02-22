@@ -10,7 +10,7 @@
   left: 0;
   width: 100%;
   padding: 40px 0;
-  z-index: 2;
+  z-index: 5;
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;

@@ -182,22 +182,23 @@ function move(){
 //Вызываем функцию
 move();
 */;
-$(window).on("load", function() {
+$(window).on("load", function () {
 	setTimeout(() => {
 		$(".preloader").fadeOut(1000);
-	}, 2500); 
+		$("body").removeClass("_lock");
+	}, 2500);
 });
-$(document).ready(function(){
+$(document).ready(function () {
 	if ($(".sidebar").length > 0) {
 		let sidebar = $(".sidebar");
 		let sidebar_btn = $(".sidebar-menu__btn");
 		let sidebar_body = $(".sidebar-menu__body");
 		let sidebar_area = $(".sidebar__area");
 		let sidebar_item = $(".sidebar__item");
-		sidebar_area.click(function() {
+		sidebar_area.click(function () {
 			sidebarActions("close");
 		});
-		sidebar_btn.click(function() {
+		sidebar_btn.click(function () {
 			sidebarActions("toggle");
 		});
 		function sidebarActions(action) {
@@ -215,20 +216,21 @@ $(document).ready(function(){
 				sidebar.toggleClass("_active");
 				sidebar_btn.toggleClass("_active");
 				sidebar_body.toggleClass("_active");
+			} else {
+				console.log(
+					"Не корректное значение для функции! | Incorrect value for function!"
+				);
 			}
-			else {
-				console.log("Не корректное значение для функции! | Incorrect value for function!");
-			}
-		};
+		}
 
 		headerBg();
-		$(window).on("resize", function() {
+		$(window).on("resize", function () {
 			headerBg();
 		});
 
 		function headerBg() {
 			if ($(window).width() <= 768) {
-				$(window).on("scroll", function() {
+				$(window).on("scroll", function () {
 					if ($(document).scrollTop() > 50) {
 						$(".header").addClass("_scroll");
 					} else {
@@ -239,7 +241,7 @@ $(document).ready(function(){
 				$(window).unbind("scroll");
 				$(".header").removeClass("_scroll");
 			}
-		};
+		}
 
 		for (let i = 0; i < sidebar_item.length; i++) {
 			k = i + 1;
@@ -248,7 +250,7 @@ $(document).ready(function(){
 			k += 0.15;
 			sidebar_item.eq(i).css("--i", `${k}s`);
 		}
-	};
+	}
 	if ($(".lang-header").length > 0) {
 		let current_cnt = $(".lang-header__current");
 		let list = $(".lang-header__list");
@@ -263,26 +265,26 @@ $(document).ready(function(){
 				current = current_cnt.find(item);
 				list.append(current);
 			}
-		};
+		}
 		itemMove();
 		/* перемещение | moving */
-		item.click(function() {
+		item.click(function () {
 			item.removeClass("_current");
 			itemMove("reverse");
 			$(this).addClass("_current");
 			itemMove();
 		});
 		/* визуал | visual */
-		current_cnt.click(function() {
+		current_cnt.click(function () {
 			current_cnt.toggleClass("_active");
 			list.toggleClass("_active");
 		});
 		/* скрытие переключалки при нажатии на любоме место */
-		$(document).click(function(e) {
+		$(document).click(function (e) {
 			if (!e.target.closest(".lang-header")) {
 				current_cnt.removeClass("_active");
 				list.removeClass("_active");
 			}
 		});
-	};
+	}
 });

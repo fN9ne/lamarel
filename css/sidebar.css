@@ -14,7 +14,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  z-index: 3;
+  z-index: 6;
   border-right: 1px solid rgba(0, 26, 162, 0.3);
   /* область (по клику закрывает сайдбар) | area (close sidebar on click) */
   /* список страниц | pages list */
@@ -303,6 +303,7 @@
   display: flex;
   opacity: 0;
   visibility: hidden;
+  z-index: -1;
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
@@ -337,6 +338,7 @@
 
 .sidebar-menu__body._active:before,
 .sidebar-menu__body._active:after {
+  display: none;
   border-radius: 0;
 }
 
@@ -426,6 +428,7 @@
     -webkit-transition: 0.3s all ease;
     -o-transition: 0.3s all ease;
     transition: 0.3s all ease;
+    height: 108px;
   }
 
   .sidebar._active {
