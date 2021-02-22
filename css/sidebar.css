@@ -432,6 +432,7 @@
   }
 
   .sidebar._active {
+    height: 100%;
     background: -webkit-gradient(linear, left bottom, left top, color-stop(5.32%, #4A19B3), to(#7261ED));
     background: -o-linear-gradient(bottom, #4A19B3 5.32%, #7261ED 100%);
     background: linear-gradient(360deg, #4A19B3 5.32%, #7261ED 100%);
