@@ -183,6 +183,7 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 
 .btn-link {
@@ -205,6 +206,11 @@ h6 {
   transition: 0.3s all ease;
 }
 
+.btn-link_white {
+  color: #f1f2f2;
+  border: 1px solid #fafafa;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -220,15 +226,24 @@ h6 {
     background: #7261ed;
     color: #f4f4f4;
   }
+
+  .btn-link_white:hover {
+    background: #fafafa;
+    color: #4a19b3;
+  }
 }
 
 @media (max-width: 768px) {
   :root {
-    --sidebar-width: 80px;
+    --sidebar-width: 70px;
   }
 
   ._container {
     max-width: 1105px;
     padding: 0px 10px;
+  }
+
+  .page {
+    margin: 0;
   }
 }

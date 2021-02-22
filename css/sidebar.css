@@ -14,7 +14,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
   border-right: 1px solid rgba(0, 26, 162, 0.3);
   /* область (по клику закрывает сайдбар) | area (close sidebar on click) */
   /* список страниц | pages list */
@@ -418,7 +418,11 @@
 
 @media (max-width: 768px) {
   :root {
-    --sidebar-width: 80px;
+    --sidebar-width: 70px;
+  }
+
+  .sidebar {
+    border: none;
   }
 
   .sidebar__content {
@@ -477,5 +481,9 @@
 
   .sidebar__links {
     display: none;
+  }
+
+  .sidebar-menu__btn {
+    top: 45px;
   }
 }

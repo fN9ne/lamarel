@@ -182,11 +182,11 @@ function move(){
 //Вызываем функцию
 move();
 */;
-$(window).on("load", function() {
+/*$(window).on("load", function() {
 	setTimeout(() => {
 		$(".preloader").fadeOut(1000);
 	}, 2500); 
-});
+});*/
 $(document).ready(function(){
 	if ($(".sidebar").length > 0) {
 		let sidebar_btn = $(".sidebar-menu__btn");
@@ -224,5 +224,41 @@ $(document).ready(function(){
 			k += 0.15;
 			sidebar_item.eq(i).css("--i", `${k}s`);
 		}
-	}
+	};
+	if ($(".lang-header").length > 0) {
+		let current_cnt = $(".lang-header__current");
+		let list = $(".lang-header__list");
+		let item = $(".lang-header__item");
+		let current;
+		function itemMove(mode = "default") {
+			if (mode == "default") {
+				current = $(".lang-header__item._current");
+				current_cnt.append(current);
+			}
+			if (mode == "reverse") {
+				current = current_cnt.find(item);
+				list.append(current);
+			}
+		};
+		itemMove();
+		/* перемещение | moving */
+		item.click(function() {
+			item.removeClass("_current");
+			itemMove("reverse");
+			$(this).addClass("_current");
+			itemMove();
+		});
+		/* визуал | visual */
+		current_cnt.click(function() {
+			current_cnt.toggleClass("_active");
+			list.toggleClass("_active");
+		});
+		/* скрытие переключалки при нажатии на любоме место */
+		$(document).click(function(e) {
+			if (!e.target.closest(".lang-header")) {
+				current_cnt.removeClass("_active");
+				list.removeClass("_active");
+			}
+		});
+	};
 });
