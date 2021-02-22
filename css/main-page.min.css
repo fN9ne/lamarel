@@ -1,0 +1,1 @@
+.main-screen{height:100vh;position:relative}.main-screen:before{content:'';position:absolute;top:0;right:0;width:100vw;height:100vh;z-index:0;background:-webkit-gradient(linear,left bottom,left top,color-stop(5.32%,#4a19b3),to(#7261ed));background:-o-linear-gradient(bottom,#4a19b3 5.32%,#7261ed 100%);background:linear-gradient(360deg,#4a19b3 5.32%,#7261ed 100%)}

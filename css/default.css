@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "Geometria";
+  font-display: swap;
+  src: url("../fonts/Geometria-Bold.woff") format("woff"), url("../fonts/Geometria-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geometria";
+  font-display: swap;
+  src: url("../fonts/Geometria-Medium.woff") format("woff"), url("../fonts/Geometria-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+:root {
+  --sidebar-width: 145px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  font-weight: 500;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: "Geometria";
+  font-size: 14px;
+}
+
+body {
+  font-family: "Geometria";
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+input:focus::-moz-placeholder {
+  opacity: 0;
+}
+
+input:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+input:focus::-ms-input-placeholder {
+  opacity: 0;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+}
+
+textarea:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+textarea:focus::-moz-placeholder {
+  opacity: 0;
+}
+
+textarea:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+textarea:focus::-ms-input-placeholder {
+  opacity: 0;
+}
+
+textarea:focus::placeholder {
+  opacity: 0;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+._container {
+  max-width: 1125px;
+  width: 100%;
+  margin: 0px auto;
+  padding: 0px 20px;
+}
+
+/* общие стили | common styles */
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  background: #4A19B3;
+}
+
+.page {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin: 0 0 0 var(--sidebar-width);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.btn-link {
+  padding: 20px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #7261ed;
+  font-size: 15px;
+  border: 1px solid rgba(114, 97, 237, 0.5);
+  border-radius: 5px;
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: #f4f4f4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7261ed;
+}
+
+@media (min-width: 992px) {
+  .btn-link:hover {
+    background: #7261ed;
+    color: #f4f4f4;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 80px;
+  }
+
+  ._container {
+    max-width: 1105px;
+    padding: 0px 10px;
+  }
+}
