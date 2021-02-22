@@ -194,6 +194,63 @@ h6 {
   position: relative;
 }
 
+.nav {
+  position: absolute;
+  left: 0;
+  bottom: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.nav__indicator {
+  width: 12px;
+  height: 26px;
+  border-radius: 6px;
+  border: 1px solid #fff;
+  margin: 0 0 3px 0;
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  position: relative;
+}
+
+.nav__indicator:before {
+  content: '';
+  width: 6px;
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 3px;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.nav__arrow {
+  width: 12px;
+  -webkit-transition: 0.3s all ease 0.15s;
+  -o-transition: 0.3s all ease 0.15s;
+  transition: 0.3s all ease 0.15s;
+}
+
+.nav__arrow img {
+  width: 100%;
+}
+
 .btn-link {
   padding: 20px 50px;
   display: -webkit-box;
@@ -230,6 +287,16 @@ h6 {
 }
 
 @media (min-width: 992px) {
+  .nav:hover .nav__indicator:before {
+    top: 15px;
+  }
+
+  .nav:hover .nav__arrow {
+    -webkit-transform: translate(0, 3px);
+        -ms-transform: translate(0, 3px);
+            transform: translate(0, 3px);
+  }
+
   .btn-link:hover {
     background: #7261ed;
     color: #f4f4f4;
