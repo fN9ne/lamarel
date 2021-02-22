@@ -41,11 +41,13 @@
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   border-radius: 0 0 50% 0;
-  -webkit-transition: border-radius 0.3s ease 0.25s, -webkit-transform 0.5s ease;
-  transition: border-radius 0.3s ease 0.25s, -webkit-transform 0.5s ease;
-  -o-transition: transform 0.5s ease, border-radius 0.3s ease 0.25s;
-  transition: transform 0.5s ease, border-radius 0.3s ease 0.25s;
-  transition: transform 0.5s ease, border-radius 0.3s ease 0.25s, -webkit-transform 0.5s ease;
+  -webkit-transition: border-radius 0.5s ease, -webkit-transform 0.5s ease;
+  transition: border-radius 0.5s ease, -webkit-transform 0.5s ease;
+  -o-transition: transform 0.5s ease, border-radius 0.5s ease;
+  transition: transform 0.5s ease, border-radius 0.5s ease;
+  transition: transform 0.5s ease, border-radius 0.5s ease, -webkit-transform 0.5s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .sidebar__header {
@@ -108,7 +110,6 @@
   -o-transition: transform 0.5s ease var(--i);
   transition: transform 0.5s ease var(--i);
   transition: transform 0.5s ease var(--i), -webkit-transform 0.5s ease var(--i);
-  /* текущая страница | current page */
 }
 
 .sidebar__item:last-child {
@@ -145,10 +146,6 @@
   -o-transition: opacity 0.2s linear, transform 0.5s ease, visibility 0.5s ease;
   transition: opacity 0.2s linear, transform 0.5s ease, visibility 0.5s ease;
   transition: opacity 0.2s linear, transform 0.5s ease, visibility 0.5s ease, -webkit-transform 0.5s ease;
-}
-
-.sidebar__item._current a {
-  color: #0e0e0e;
 }
 
 .sidebar__contacts {
@@ -310,6 +307,9 @@
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
   /* когда активен | when active */
+  /* слои | layers */
+  /* средний слой | middle layer */
+  /* нижний слой | lower layer */
 }
 
 .sidebar-menu__body._active {
@@ -333,6 +333,43 @@
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
+}
+
+.sidebar-menu__body._active:before,
+.sidebar-menu__body._active:after {
+  border-radius: 0;
+}
+
+.sidebar-menu__body:before,
+.sidebar-menu__body:after {
+  content: '';
+  max-width: 842px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.sidebar-menu__body:before {
+  background: rgba(244, 244, 244, 0.7);
+  z-index: 1;
+  border-radius: 0 0 70% 0;
+  -webkit-transition: border-radius 0.45s ease;
+  -o-transition: border-radius 0.45s ease;
+  transition: border-radius 0.45s ease;
+}
+
+.sidebar-menu__body:after {
+  z-index: 0;
+  border-radius: 0 0 60% 0;
+  background: rgba(244, 244, 244, 0.7);
+  -webkit-transition: border-radius 0.2s ease;
+  -o-transition: border-radius 0.2s ease;
+  transition: border-radius 0.2s ease;
 }
 
 @media (min-width: 992px) {
