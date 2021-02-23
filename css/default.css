@@ -32,8 +32,8 @@
   font-display: block;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icons' !important;
   speak: never;
@@ -47,20 +47,42 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-applications:before {
+.icon-analyze:before {
+  content: "\e904";
+  color: #7261ed;
+}
+
+.icon-dollar-tag:before {
+  content: "\e905";
+}
+
+.icon-eye:before {
+  content: "\e906";
+}
+
+.icon-quality:before {
+  content: "\e907";
+}
+
+.icon-support:before {
+  content: "\e908";
+}
+
+.icon-applications-icon:before {
   content: "\e900";
 }
 
-.icon-seo:before {
+.icon-seo-icon:before {
   content: "\e901";
 }
 
-.icon-web-dev:before {
+.icon-web-dev-icon:before {
   content: "\e902";
 }
 
-.icon-web-design:before {
+.icon-web-design-icon:before {
   content: "\e903";
+  color: #7261ed;
 }
 
 :root {
@@ -237,6 +259,8 @@ body._lock {
 
 section {
   background: #f4f4f4;
+  position: relative;
+  z-index: 10;
 }
 
 .btn-arrow {

@@ -125,4 +125,74 @@ $(document).ready(function () {
 		parent = el.closest(".price-slider__top");
 		responsiveFontOnBlock(el, parent);
 	}
+	if ($(".sign").length > 0) {
+		const day = $("#day").find("span[id=count]");
+		const hour = $("#hour").find("span[id=count]");
+		const min = $("#min").find("span[id=count]");
+		const sec = $("#sec").find("span[id=count]");
+		let time = $(".sign__time-row").attr("data-time");
+		let S = time, M = "00", H = "00", D = "00";
+		if (time >= 60) {
+			minutes = time / 60;
+			minutes = Math.floor(minutes);
+			if (minutes < 10) minutes = "0" + minutes;
+			M = minutes;
+			S = time % 60;
+		}
+		if (time >= 3600) {
+			hours = time / 3600;
+			hours = Math.floor(hours);
+			if (hours < 10) hours = "0" + hours;
+			H = hours;
+			M = time % 3600;
+			M = M / 60;
+			M = Math.floor(M);
+			if (M < 10) M = "0" + M;
+		}
+		if (time >= 86400) {
+			days = time / 86400;
+			days = Math.floor(days);
+			if (days < 10) days = "0" + days;
+			D = days;
+			H = time % 86400;
+			H = H / 3600;
+			H = Math.floor(H);
+			if (H < 10) H = "0" + H;
+		}
+		setInterval(function() {
+			S = +S + 1;
+			if (S < 10) S = "0" + S;
+			if (S == 60) {
+				S = "00";
+				M = +M + 1;
+				if (M < 10) M = "0" + M;
+				if (M == 60) {
+					M = "00";
+					H = +H + 1;
+					if (H < 10) H = "0" + H;
+					if (H == 24) {
+						H = "00";
+						D = +D + 1;
+						if (D < 10) D = "0" + D;
+					}
+				}
+			}
+			sec.html(S);
+			min.html(M);
+			hour.html(H);
+			day.html(D);
+			total_time = (+D * 86400) + (+H * 3600) + (+M * 60) + +S;
+		}, 1000);
+	};
+	if ($(".about-us__tab").length > 0) {
+		let tab = $(".about-us__tab");
+		let content = $(".about-us-slide");
+		tab.click(function() {
+			i = $(this).index();
+			tab.removeClass("_current");
+			content.removeClass("_current");
+			$(this).addClass("_current");
+			content.eq(i).addClass("_current");
+		});
+	}
 });
