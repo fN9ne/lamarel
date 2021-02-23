@@ -49,7 +49,6 @@
 
 .icon-analyze:before {
   content: "\e904";
-  color: #7261ed;
 }
 
 .icon-dollar-tag:before {
@@ -82,7 +81,6 @@
 
 .icon-web-design:before {
   content: "\e903";
-  color: #7261ed;
 }
 
 :root {

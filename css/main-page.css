@@ -870,7 +870,7 @@
   border-left: 1px solid rgba(14, 14, 14, 0.3);
 }
 
-.about-us__tab:before {
+.about-us__tab i {
   color: rgba(14, 14, 14, 0.3);
   font-size: 24px;
   margin: 0 15px 0 0;
@@ -884,7 +884,7 @@
   border-left: 1px solid #7261ED;
 }
 
-.about-us__tab._current:before {
+.about-us__tab._current i {
   color: #7261ed;
 }
 
@@ -957,7 +957,7 @@
     border-left: 1px solid #0e0e0e;
   }
 
-  .about-us__tab:hover:before {
+  .about-us__tab:hover i {
     color: #0e0e0e;
   }
 
@@ -966,7 +966,7 @@
     border-left: 1px solid #7261ED;
   }
 
-  .about-us__tab._current:hover:before {
+  .about-us__tab._current:hover i {
     color: #7261ed;
   }
 }
