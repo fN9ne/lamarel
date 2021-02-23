@@ -110,5 +110,4 @@ $(document).ready(function () {
 			$(this).addClass("_current");
 		});
 	};
-	isotopePortfolio();
 });
