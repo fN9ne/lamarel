@@ -103,4 +103,12 @@ $(document).ready(function () {
 		$(".main-portfolio__item").css("height", width);
 	};
 	setSquareItem();
+	if ($(".price__tab").length > 0) {
+		let tab = $(".price__tab");
+		tab.click(function() {
+			tab.removeClass("_current");
+			$(this).addClass("_current");
+		});
+	};
+	isotopePortfolio();
 });
