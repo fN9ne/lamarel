@@ -24,6 +24,45 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'icons';
+  src: url("../fonts/icons.woff?8vberl") format("woff"), url("../img/icons.svg?8vberl#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-applications:before {
+  content: "\e900";
+}
+
+.icon-seo:before {
+  content: "\e901";
+}
+
+.icon-web-dev:before {
+  content: "\e902";
+}
+
+.icon-web-design:before {
+  content: "\e903";
+}
+
 :root {
   --sidebar-width: 145px;
 }
@@ -169,45 +208,6 @@ h6 {
 
 /* общие стили | common styles */
 
-@font-face {
-  font-family: 'icons';
-  src: url("../fonts/icons.woff?8vberl") format("woff"), url("../img/icons.svg?8vberl#icons") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-[class^="icon-"],
-[class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icons' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-applications:before {
-  content: "\e900";
-}
-
-.icon-seo:before {
-  content: "\e901";
-}
-
-.icon-web-dev:before {
-  content: "\e902";
-}
-
-.icon-web-design:before {
-  content: "\e903";
-}
-
 body._lock {
   overflow: hidden;
 }
@@ -224,7 +224,7 @@ body._lock {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  margin: 0 0 0 var(--sidebar-width);
+  margin: 0 0 0 calc(var(--sidebar-width) - 1px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -365,20 +365,6 @@ body._lock {
   color: rgba(0, 0, 0, 0.5);
   font-weight: 400;
   margin: 0 0 20px 0;
-  -webkit-transform: translate(-20px, 0);
-      -ms-transform: translate(-20px, 0);
-          transform: translate(-20px, 0);
-  -webkit-transition: all 0.5s ease 0.3s;
-  -o-transition: all 0.5s ease 0.3s;
-  transition: all 0.5s ease 0.3s;
-  opacity: 0;
-}
-
-.subtitle._active {
-  opacity: 1;
-  -webkit-transform: translate(0);
-      -ms-transform: translate(0);
-          transform: translate(0);
 }
 
 .title {
@@ -387,24 +373,16 @@ body._lock {
   font-weight: bold;
   color: #0e0e0e;
   margin: 0 0 30px 0;
-  -webkit-transform: translate(-20px, 0);
-      -ms-transform: translate(-20px, 0);
-          transform: translate(-20px, 0);
-  -webkit-transition: all 0.5s ease 0.4s;
-  -o-transition: all 0.5s ease 0.4s;
-  transition: all 0.5s ease 0.4s;
-  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .title span {
   color: #7261ed;
-}
-
-.title._active {
-  opacity: 1;
-  -webkit-transform: translate(0);
-      -ms-transform: translate(0);
-          transform: translate(0);
 }
 
 .description {
@@ -412,16 +390,19 @@ body._lock {
   font-size: 15px;
   line-height: calc(25/15);
   font-weight: 500;
-  -webkit-transform: translate(-20px, 0);
-      -ms-transform: translate(-20px, 0);
-          transform: translate(-20px, 0);
-  -webkit-transition: all 0.5s ease 0.5s;
-  -o-transition: all 0.5s ease 0.5s;
-  transition: all 0.5s ease 0.5s;
-  opacity: 0;
 }
 
-.description._active {
+._text-anim._anim-items {
+  opacity: 0;
+  -webkit-transform: translate(-10%, 0);
+      -ms-transform: translate(-10%, 0);
+          transform: translate(-10%, 0);
+  -webkit-transition: all 0.5s ease var(--i);
+  -o-transition: all 0.5s ease var(--i);
+  transition: all 0.5s ease var(--i);
+}
+
+._text-anim._anim-items._active {
   opacity: 1;
   -webkit-transform: translate(0);
       -ms-transform: translate(0);
