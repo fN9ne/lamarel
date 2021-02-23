@@ -32,8 +32,8 @@
   font-display: block;
 }
 
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icons' !important;
   speak: never;
@@ -68,19 +68,19 @@
   content: "\e908";
 }
 
-.icon-applications-icon:before {
+.icon-applications:before {
   content: "\e900";
 }
 
-.icon-seo-icon:before {
+.icon-seo:before {
   content: "\e901";
 }
 
-.icon-web-dev-icon:before {
+.icon-web-dev:before {
   content: "\e902";
 }
 
-.icon-web-design-icon:before {
+.icon-web-design:before {
   content: "\e903";
   color: #7261ed;
 }
