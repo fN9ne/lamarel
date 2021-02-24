@@ -616,26 +616,6 @@ section {
   border-bottom: 1px solid #0e0e0e;
 }
 
-.top-0:hover ~ .strip {
-  top: 0px;
-}
-
-.top-1:hover ~ .strip {
-  top: 55px;
-}
-
-.top-2:hover ~ .strip {
-  top: 110px;
-}
-
-.top-3:hover ~ .strip {
-  top: 165px;
-}
-
-.top-4:hover ~ .strip {
-  top: 220px;
-}
-
 .top-0._current ~ .strip {
   top: 0px;
 }
@@ -653,6 +633,26 @@ section {
 }
 
 .top-4._current ~ .strip {
+  top: 220px;
+}
+
+.top-0:hover ~ .strip {
+  top: 0px;
+}
+
+.top-1:hover ~ .strip {
+  top: 55px;
+}
+
+.top-2:hover ~ .strip {
+  top: 110px;
+}
+
+.top-3:hover ~ .strip {
+  top: 165px;
+}
+
+.top-4:hover ~ .strip {
   top: 220px;
 }
 
