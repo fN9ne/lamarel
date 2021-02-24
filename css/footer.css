@@ -7,7 +7,7 @@
 .footer {
   padding: 80px 0 40px 0;
   position: relative;
-  z-index: 3;
+  z-index: 6;
   background: -o-linear-gradient(1.97deg, #4A19B3 10.67%, #7261ED 99.38%);
   background: linear-gradient(88.03deg, #4A19B3 10.67%, #7261ED 99.38%);
   /* основное | general */
