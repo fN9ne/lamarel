@@ -120,14 +120,59 @@ $(document).ready(function () {
 		width = parseFloat(width);
 		$(".main-portfolio__item").css("height", width);
 	};
+	new Swiper('.price-slider', {
+		observer: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		scrollbar: {
+			el: '.swiper-scrollbar',
+			draggable: true,
+		},
+		breakpoints: {
+			1650: {
+				slidesPerView: 3,
+				spaceBetween: 70,
+			},
+			1430: {
+				slidesPerView: 2.5,
+				spaceBetween: 50,
+			},
+			1100: {
+				slidesPerView: 2,
+				spaceBetween: 25,
+			},
+			900: {
+				slidesPerView: 1.5,
+				spaceBetween: 20,
+			},
+			769: {
+				slidesPerView: 1,
+				spaceBetween: 20,
+			},
+			675: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			320: {
+				slidesPerView: 1,
+			},
+		},
+	});
+	$(".price__tab").click(function() {
+		let index = $(this).index();
+		$(".price__tab").removeClass("_current");
+		$(this).addClass("_current");
+		$(".price__slider").removeClass("_current");
+		$(".price__slider").eq(index).addClass("_current");
+	});
+	for (let i = 0; i < $(".price-slider__name").length; i++) {
+		el = $(".price-slider__name").eq(i).find("span");
+		parent = el.closest(".price-slider__top");
+		responsiveFontOnBlock(el, parent);
+	}
 	setSquareItem();
-	if ($(".price__tab").length > 0) {
-		let tab = $(".price__tab");
-		tab.click(function() {
-			tab.removeClass("_current");
-			$(this).addClass("_current");
-		});
-	};
 	for (let i = 0; i < $(".price-slider__name").length; i++) {
 		el = $(".price-slider__name").eq(i).find("span");
 		parent = el.closest(".price-slider__top");
