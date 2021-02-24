@@ -255,6 +255,14 @@ body._lock {
   position: relative;
 }
 
+.in-dev {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 section {
   background: #f4f4f4;
   position: relative;
@@ -534,6 +542,118 @@ section {
   right: 0;
   opacity: 1;
   visibility: visible;
+}
+
+.in-dev {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-size: calc(32px + 48 * ((100vw - 320px) / (1920 - 320)));
+  letter-spacing: calc(2px + 3 * ((100vw - 320px) / (1920 - 320)));
+  color: #fafafa;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.in-dev:before {
+  content: 'в процессе разработки';
+}
+
+.input {
+  margin: 0 0 33px 0;
+  width: 100%;
+}
+
+.input input {
+  height: 46px;
+  width: 100%;
+  padding: 0 15px;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 400;
+  color: #0e0e0e;
+  border-bottom: 1px solid rgba(14, 14, 14, 0.3);
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.input input::-webkit-input-placeholder {
+  color: rgba(14, 14, 14, 0.3);
+}
+
+.input input::-moz-placeholder {
+  color: rgba(14, 14, 14, 0.3);
+}
+
+.input input:-ms-input-placeholder {
+  color: rgba(14, 14, 14, 0.3);
+}
+
+.input input::-ms-input-placeholder {
+  color: rgba(14, 14, 14, 0.3);
+}
+
+.input input::placeholder {
+  color: rgba(14, 14, 14, 0.3);
+}
+
+.input input:focus {
+  border-bottom: 1px solid #0e0e0e;
+}
+
+.top-0:hover ~ .strip {
+  top: 0px;
+}
+
+.top-1:hover ~ .strip {
+  top: 55px;
+}
+
+.top-2:hover ~ .strip {
+  top: 110px;
+}
+
+.top-3:hover ~ .strip {
+  top: 165px;
+}
+
+.top-4:hover ~ .strip {
+  top: 220px;
+}
+
+.top-0._current ~ .strip {
+  top: 0px;
+}
+
+.top-1._current ~ .strip {
+  top: 55px;
+}
+
+.top-2._current ~ .strip {
+  top: 110px;
+}
+
+.top-3._current ~ .strip {
+  top: 165px;
+}
+
+.top-4._current ~ .strip {
+  top: 220px;
 }
 
 @media (min-width: 992px) {
