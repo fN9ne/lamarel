@@ -76,6 +76,14 @@ function responsiveFontOnBlock(el, parent) {
 	};
 };;
 $(document).ready(function () {
+	let main_block_height = parseFloat($(".main-screen").css("height"));
+	$(window).on("scroll", function() {
+		if ($(document).scrollTop() > main_block_height) {
+			$(".sidebar").addClass("_hide-border");
+		} else {
+			$(".sidebar").removeClass("_hide-border");
+		}
+	});
 	if ($(".services").length > 0) {
 		let item = $(".services-tabs__item");
 		let service = $(".service");
@@ -195,4 +203,14 @@ $(document).ready(function () {
 			content.eq(i).addClass("_current");
 		});
 	}
+	new Swiper('.feedback__content', {
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		scrollbar: {
+			el: '.swiper-scrollbar',
+			draggable: true,
+		},
+	});
 });

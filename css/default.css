@@ -241,6 +241,7 @@ body._lock {
 }
 
 .page {
+  min-width: 0;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -266,7 +267,7 @@ body._lock {
 section {
   background: #f4f4f4;
   position: relative;
-  z-index: 10;
+  z-index: 5;
 }
 
 .btn-arrow {

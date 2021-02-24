@@ -206,16 +206,19 @@ $(document).ready(function () {
 				sidebar.addClass("_active");
 				sidebar_btn.addClass("_active");
 				sidebar_body.addClass("_active");
+				$("body").addClass("_lock");
 			}
 			if (action == "close") {
 				sidebar.removeClass("_active");
 				sidebar_btn.removeClass("_active");
 				sidebar_body.removeClass("_active");
+				$("body").removeClass("_lock");
 			}
 			if (action == "toggle") {
 				sidebar.toggleClass("_active");
 				sidebar_btn.toggleClass("_active");
 				sidebar_body.toggleClass("_active");
+				$("body").toggleClass("_lock");
 			} else {
 				console.log(
 					"Не корректное значение для функции! | Incorrect value for function!"
