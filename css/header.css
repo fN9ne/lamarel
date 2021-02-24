@@ -16,8 +16,12 @@
   transition: 0.3s all ease;
 }
 
-.header._scroll {
-  background: rgba(114, 97, 237, 0.9);
+.header._hide {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 
 .header__container {
@@ -257,8 +261,15 @@
   }
 
   .header {
+    background: rgba(114, 97, 237, 0.9);
     position: fixed;
-    padding: 20px -0;
+    padding: 15px 0;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
 
   .header__container {
@@ -266,6 +277,14 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+
+  .header__logo {
+    max-height: 50px;
+  }
+
+  .header__logo svg {
+    height: 100%;
   }
 
   .header__menu {
