@@ -972,23 +972,6 @@
   overflow: visible;
 }
 
-.feedback__navigation .swiper-arrow {
-  position: absolute;
-  top: 20px;
-}
-
-.feedback__navigation .swiper-scrollbar {
-  margin: 0;
-}
-
-.feedback__navigation .swiper-button-next {
-  right: 0;
-}
-
-.feedback__navigation .swiper-button-prev {
-  left: 0;
-}
-
 .review {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1521,6 +1504,23 @@
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+  }
+
+  .feedback__navigation .swiper-arrow {
+    position: absolute;
+    top: 20px;
+  }
+
+  .feedback__navigation .swiper-scrollbar {
+    margin: 0;
+  }
+
+  .feedback__navigation .swiper-button-next {
+    right: 0;
+  }
+
+  .feedback__navigation .swiper-button-prev {
+    left: 0;
   }
 
   .review__top {
