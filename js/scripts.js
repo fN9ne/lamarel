@@ -189,6 +189,36 @@ $(window).on("load", function () {
 	}, 2500);
 });
 $(document).ready(function () {
+	if ($(".order-link").length > 0) {
+		$(".order-link").click(function() {
+			$("body").addClass("_lock");
+			$(".order-popup").addClass("_active");
+		});
+		$(".order-popup__close").click(function() {
+			$("body").removeClass("_lock");
+			$(".order-popup").removeClass("_active");
+		});
+	}
+	for (let i = 0; i < $(".select").length; i++) {
+		let current = $(".select__current");
+		let list = $(".select__list");
+		let item = $(".select__item");
+		let input = $(".select").find("input");
+		current.click(function() {
+			current.toggleClass("_active");
+			list.toggleClass("_active");
+		});
+		item.click(function() {
+			text = $(this).text();
+			current.removeClass("_active");
+			list.removeClass("_active");
+			current.text(text);
+			item.removeClass("_hide");
+			$(this).addClass("_hide");
+			current.addClass("_picked");
+			input.val($(this).attr("data-value"));
+		});
+	};
 	if ($(".sidebar").length > 0) {
 		let sidebar = $(".sidebar");
 		let sidebar_btn = $(".sidebar-menu__btn");
@@ -222,24 +252,32 @@ $(document).ready(function () {
 			} else {
 				console.log(
 					"Не корректное значение для функции! | Incorrect value for function!"
-				);
+					);
 			}
 		}
 
+		$(window).on("resize", headerScroll);
 		function headerScroll() {
-			let lastScroll = 0;
-			$(window).on("scroll", function() {
-				st = $(this).scrollTop();
-				if (st > lastScroll) {
-					$(".header").addClass("_hide");
-					$(".sidebar").addClass("_hide");
-				} else {
-					$(".header").removeClass("_hide");
-					$(".sidebar").removeClass("_hide");
-				}
-				lastScroll = st;
-			});
-		};
+			if ($(window).width() <= 768) {
+				let lastScroll = 0;
+				$(window).on("scroll", function () {
+					st = $(this).scrollTop();
+					if (st > lastScroll && st > 500) {
+						$(".header").addClass("_hide");
+						$(".sidebar").addClass("_hide");
+					}
+					if (st < lastScroll && st < 500) {
+						$(".header").removeClass("_hide");
+						$(".sidebar").removeClass("_hide");
+					}
+					lastScroll = st;
+				});
+			} else {
+				$(window).unbind("scroll");
+				$(".header").removeClass("_hide");
+				$(".sidebar").removeClass("_hide");
+			}
+		}
 		headerScroll();
 
 		for (let i = 0; i < sidebar_item.length; i++) {
