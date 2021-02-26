@@ -290,6 +290,10 @@
   line-height: calc(63/50);
 }
 
+.service__name span {
+  white-space: nowrap;
+}
+
 .service__description {
   font-size: 15px;
   line-height: calc(19/15);
@@ -1229,6 +1233,7 @@
 
   .services {
     padding: 70px 0 40px 0;
+    border-radius: 0;
   }
 
   .services__text {
