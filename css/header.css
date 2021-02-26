@@ -17,11 +17,11 @@
 }
 
 .header._hide {
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+  padding: 10px 0;
+}
+
+.header._hide .header__logo {
+  max-height: 30px;
 }
 
 .header__container {
@@ -47,9 +47,9 @@
 
 .header__logo svg path {
   stroke: #fafafa;
-  -webkit-transition: 0.3s all ease;
-  -o-transition: 0.3s all ease;
-  transition: 0.3s all ease;
+  -webkit-transition: 0.5s ease 0.05s;
+  -o-transition: 0.5s ease 0.05s;
+  transition: 0.5s ease 0.05s;
 }
 
 .header__menu {
@@ -267,9 +267,6 @@
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    -webkit-transform: translate(0, 0);
-        -ms-transform: translate(0, 0);
-            transform: translate(0, 0);
   }
 
   .header__container {
@@ -281,6 +278,9 @@
 
   .header__logo {
     max-height: 50px;
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
   }
 
   .header__logo svg {

@@ -23,11 +23,11 @@
 }
 
 .sidebar._hide {
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+  height: 50px;
+}
+
+.sidebar._hide .sidebar-menu__btn {
+  top: 10px;
 }
 
 .sidebar._hide-border {
@@ -264,22 +264,22 @@
 
 .sidebar-menu__btn span {
   top: 13.5px;
-  -webkit-transform: rotate(-45deg) translate(-10px, 0);
-      -ms-transform: rotate(-45deg) translate(-10px, 0);
-          transform: rotate(-45deg) translate(-10px, 0);
+  -webkit-transform: rotate(-45deg) translate(-8px, 0);
+      -ms-transform: rotate(-45deg) translate(-8px, 0);
+          transform: rotate(-45deg) translate(-8px, 0);
 }
 
 .sidebar-menu__btn:before {
   top: 3px;
-  -webkit-transform: rotate(-45deg) translate(-10px, 0);
-      -ms-transform: rotate(-45deg) translate(-10px, 0);
-          transform: rotate(-45deg) translate(-10px, 0);
+  -webkit-transform: rotate(-45deg) translate(-8px, 0);
+      -ms-transform: rotate(-45deg) translate(-8px, 0);
+          transform: rotate(-45deg) translate(-8px, 0);
 }
 
 .sidebar-menu__btn:after {
-  -webkit-transform: rotate(-45deg) translate(5px, 0);
-      -ms-transform: rotate(-45deg) translate(5px, 0);
-          transform: rotate(-45deg) translate(5px, 0);
+  -webkit-transform: rotate(-45deg) translate(7px, 0);
+      -ms-transform: rotate(-45deg) translate(7px, 0);
+          transform: rotate(-45deg) translate(7px, 0);
   bottom: 3px;
 }
 
@@ -510,5 +510,31 @@
 
   .sidebar-menu__btn {
     top: 25px;
+  }
+
+  .sidebar-menu__btn span,
+  .sidebar-menu__btn:before,
+  .sidebar-menu__btn:after {
+    height: 2px;
+    width: 25px;
+    left: 2.5px;
+  }
+
+  .sidebar-menu__btn span {
+    top: 14px;
+    -webkit-transform: rotate(-45deg) translate(-8px, 0);
+        -ms-transform: rotate(-45deg) translate(-8px, 0);
+            transform: rotate(-45deg) translate(-8px, 0);
+  }
+
+  .sidebar-menu__btn:before {
+    top: 5px;
+  }
+
+  .sidebar-menu__btn:after {
+    bottom: 5px;
+    -webkit-transform: rotate(-45deg) translate(5px, 0);
+        -ms-transform: rotate(-45deg) translate(5px, 0);
+            transform: rotate(-45deg) translate(5px, 0);
   }
 }
