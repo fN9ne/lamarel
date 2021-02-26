@@ -13,7 +13,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: var(--height);
+  height: 100%;
   z-index: 7;
   border-right: 1px solid rgba(0, 26, 162, 0.3);
   /* область (по клику закрывает сайдбар) | area (close sidebar on click) */
@@ -315,6 +315,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100vh;
   opacity: 0;
   visibility: hidden;
   z-index: -1;
@@ -450,7 +451,7 @@
   }
 
   .sidebar._active {
-    height: var(--height);
+    height: 100%;
     background: -webkit-gradient(linear, left bottom, left top, color-stop(5.32%, #4A19B3), to(#7261ED));
     background: -o-linear-gradient(bottom, #4A19B3 5.32%, #7261ED 100%);
     background: linear-gradient(360deg, #4A19B3 5.32%, #7261ED 100%);
