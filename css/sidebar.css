@@ -49,15 +49,14 @@
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: auto;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  border-radius: 0 0 50% 0;
-  -webkit-transition: border-radius 0.5s ease, -webkit-transform 0.5s ease;
-  transition: border-radius 0.5s ease, -webkit-transform 0.5s ease;
-  -o-transition: transform 0.5s ease, border-radius 0.5s ease;
-  transition: transform 0.5s ease, border-radius 0.5s ease;
-  transition: transform 0.5s ease, border-radius 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-transform: translate(-20%, 0);
+      -ms-transform: translate(-20%, 0);
+          transform: translate(-20%, 0);
+  -webkit-transition: border-radius 0.5s ease, -webkit-transform 0.8s ease 0.2s;
+  transition: border-radius 0.5s ease, -webkit-transform 0.8s ease 0.2s;
+  -o-transition: transform 0.8s ease 0.2s, border-radius 0.5s ease;
+  transition: transform 0.8s ease 0.2s, border-radius 0.5s ease;
+  transition: transform 0.8s ease 0.2s, border-radius 0.5s ease, -webkit-transform 0.8s ease 0.2s;
   position: relative;
   z-index: 2;
 }
@@ -91,6 +90,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow: hidden;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -107,9 +107,12 @@
   background: rgba(74, 25, 179, 0.7);
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: 0.3s all ease;
-  -o-transition: 0.3s all ease;
-  transition: 0.3s all ease;
+  -webkit-transform: translate(-25%, 0) scale(3, 1);
+      -ms-transform: translate(-25%, 0) scale(3, 1);
+          transform: translate(-25%, 0) scale(3, 1);
+  -webkit-transition: 0.7s linear;
+  -o-transition: 0.7s linear;
+  transition: 0.7s linear;
 }
 
 .sidebar__item {
@@ -331,7 +334,6 @@
 }
 
 .sidebar-menu__body._active .sidebar__content {
-  border-radius: 0;
   -webkit-transform: translate(0);
       -ms-transform: translate(0);
           transform: translate(0);
@@ -340,6 +342,9 @@
 .sidebar-menu__body._active .sidebar__area {
   opacity: 1;
   visibility: visible;
+  -webkit-transform: scale(1, 1) translate(0, 0);
+      -ms-transform: scale(1, 1) translate(0, 0);
+          transform: scale(1, 1) translate(0, 0);
 }
 
 .sidebar-menu__body._active .sidebar__item {
@@ -350,8 +355,9 @@
 
 .sidebar-menu__body._active:before,
 .sidebar-menu__body._active:after {
-  display: none;
-  border-radius: 0;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 .sidebar-menu__body:before,
@@ -363,27 +369,28 @@
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transition: 0.3s all ease;
-  -o-transition: 0.3s all ease;
-  transition: 0.3s all ease;
 }
 
 .sidebar-menu__body:before {
   background: rgba(244, 244, 244, 0.7);
   z-index: 1;
-  border-radius: 0 0 70% 0;
-  -webkit-transition: border-radius 0.45s ease;
-  -o-transition: border-radius 0.45s ease;
-  transition: border-radius 0.45s ease;
+  -webkit-transform: translate(-10%, 0);
+      -ms-transform: translate(-10%, 0);
+          transform: translate(-10%, 0);
+  -webkit-transition: all 0.6s ease 0.1s;
+  -o-transition: all 0.6s ease 0.1s;
+  transition: all 0.6s ease 0.1s;
 }
 
 .sidebar-menu__body:after {
   z-index: 0;
-  border-radius: 0 0 60% 0;
   background: rgba(244, 244, 244, 0.7);
-  -webkit-transition: border-radius 0.2s ease;
-  -o-transition: border-radius 0.2s ease;
-  transition: border-radius 0.2s ease;
+  -webkit-transform: translate(-10%, 0);
+      -ms-transform: translate(-10%, 0);
+          transform: translate(-10%, 0);
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 @media (min-width: 992px) {
@@ -474,9 +481,12 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .sidebar__area {
@@ -494,7 +504,7 @@
   }
 
   .sidebar__item a {
-    font-size: calc(22px + 8 * ((100vw - 320px) / (768 - 320)));
+    font-size: calc(25px + 5 * ((100vw - 320px) / (768 - 320)));
   }
 
   .sidebar__contacts {

@@ -279,14 +279,6 @@ $(document).ready(function () {
 			}
 		}
 		headerScroll();
-
-		for (let i = 0; i < sidebar_item.length; i++) {
-			k = i + 1;
-			k *= 5;
-			k /= 100;
-			k += 0.15;
-			sidebar_item.eq(i).css("--i", `${k}s`);
-		}
 	}
 	if ($(".lang-header").length > 0) {
 		let current_cnt = $(".lang-header__current");
