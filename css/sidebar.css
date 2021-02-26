@@ -311,7 +311,6 @@
 .sidebar-menu__body {
   position: fixed;
   left: calc(var(--sidebar-width) - 1px);
-  height: 100vh;
   width: calc(100% - var(--sidebar-width) + 1px);
   display: -webkit-box;
   display: -ms-flexbox;

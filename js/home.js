@@ -85,7 +85,9 @@ $(document).ready(function () {
 	function mainBlockHeight() {
 		let height = $(window).height();
 		let screen = $(".main-screen");
+		let sidebar_body = $(".sidebar-menu__body");
 		screen.css("height", height);
+		sidebar_body.css("height", height);
 	};
 	mainBlockHeight();
 	$(window).on("resize", function() {
