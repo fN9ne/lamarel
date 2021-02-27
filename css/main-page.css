@@ -29,6 +29,10 @@
   background: linear-gradient(360deg, #4A19B3 5.32%, #7261ED 100%);
 }
 
+.main-screen .ti-cursor {
+  font-weight: normal;
+}
+
 .main-screen__container {
   width: 100%;
   margin: 0 calc(20px + 70 * ((100vw - 768px) / (1920 - 768)));
@@ -1193,17 +1197,15 @@
   }
 
   .main-screen__subtitle {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     margin: 0;
+    padding: 0;
   }
 
   .main-screen__subtitle:before {
     width: 22px;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
   }
 
   .main-screen__subtitle {
