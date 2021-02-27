@@ -193,9 +193,11 @@ $(document).ready(function () {
 		let height = $(window).height();
 		let screen = $(".main-screen");
 		screen.css("height", height);
-	};
+	}
 	mainBlockHeight();
-	$(window).on("resize", function() {
+	let vh = $(window).height() * 0.01;
+	document.documentElement.style.setProperty("--vh", `${vh}px`);
+	$(window).on("resize", function () {
 		mainBlockHeight();
 	});
 	for (let i = 0; i < $(".select").length; i++) {
@@ -203,11 +205,11 @@ $(document).ready(function () {
 		let list = $(".select__list");
 		let item = $(".select__item");
 		let input = $(".select").find("input");
-		current.click(function() {
+		current.click(function () {
 			current.toggleClass("_active");
 			list.toggleClass("_active");
 		});
-		item.click(function() {
+		item.click(function () {
 			text = $(this).text();
 			current.removeClass("_active");
 			list.removeClass("_active");
@@ -217,7 +219,7 @@ $(document).ready(function () {
 			current.addClass("_picked");
 			input.val($(this).attr("data-value"));
 		});
-	};
+	}
 	if ($(".sidebar").length > 0) {
 		let sidebar = $(".sidebar");
 		let sidebar_btn = $(".sidebar-menu__btn");
@@ -251,7 +253,7 @@ $(document).ready(function () {
 			} else {
 				console.log(
 					"Не корректное значение для функции! | Incorrect value for function!"
-					);
+				);
 			}
 		}
 
