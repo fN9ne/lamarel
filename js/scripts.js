@@ -270,6 +270,12 @@ $(document).ready(function () {
 		}
 		headerScroll();
 	}
+	if (Boolean($("header").attr("data-on-page")) == true) {
+		const current_page = $("header").attr("data-page");
+		const item = $(".menu__item");
+		item.not(".menu__item[id=home]").addClass("_hidden");
+		$(`.menu__item[id=${current_page}]`).removeClass("_hidden").addClass("_current");
+	}
 	if ($(".lang-header").length > 0) {
 		let current_cnt = $(".lang-header__current");
 		let list = $(".lang-header__list");
