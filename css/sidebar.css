@@ -319,7 +319,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100vh;
+  height: 100%;
   opacity: 0;
   visibility: hidden;
   overflow: hidden;
