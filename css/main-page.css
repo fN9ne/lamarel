@@ -1233,6 +1233,7 @@
   }
 
   .main-screen__picture {
+    max-width: 500px;
     padding: 0 50px;
     margin: 0;
   }
