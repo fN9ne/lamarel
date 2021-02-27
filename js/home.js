@@ -82,6 +82,20 @@ function responsiveFontOnBlock(el, parent, mode = 0) {
 };;
 $(document).ready(function () {
 	let main_block_height = parseFloat($(".main-screen").css("height"));
+	const typing = new TypeIt("#type", {
+		speed: 100,
+		deleteSpeed: 50,
+		loop: true,
+		startDelay: 0,
+	});
+	setTimeout(() => {
+		typing
+			.type('КРЕАТИВНИХ', {delay: 3000})
+			.delete(10)
+			.type('КРУТИХ', {delay: 3000})
+			.delete(6)
+			.go();
+	}, 3500);
 	function mainBlockHeight() {
 		let height = $(window).height();
 		let screen = $(".main-screen");
