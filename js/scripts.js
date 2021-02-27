@@ -183,6 +183,8 @@ function move(){
 move();
 */;
 $(document).ready(function () {
+	let vh = $(window).height() * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
 	for (let i = 0; i < $(".select").length; i++) {
 		let current = $(".select__current");
 		let list = $(".select__list");
