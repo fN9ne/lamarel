@@ -232,6 +232,11 @@ body._lock {
   overflow: hidden;
 }
 
+body {
+  -ms-scroll-chaining: none;
+      overscroll-behavior: contain;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
