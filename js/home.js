@@ -80,6 +80,12 @@ function responsiveFontOnBlock(el, parent, mode = 0) {
 		el_width = parseFloat(el.css("width"));
 	};
 };;
+$(window).on("load", function () {
+	setTimeout(() => {
+		$(".preloader").fadeOut(1000);
+		$("body").removeClass("_lock");
+	}, 2500);
+});
 $(document).ready(function () {
 	let main_block_height = parseFloat($(".main-screen").css("height"));
 	const typing = new TypeIt("#type", {

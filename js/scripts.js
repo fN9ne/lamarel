@@ -182,12 +182,6 @@ function move(){
 //Вызываем функцию
 move();
 */;
-$(window).on("load", function () {
-	setTimeout(() => {
-		$(".preloader").fadeOut(1000);
-		$("body").removeClass("_lock");
-	}, 2500);
-});
 $(document).ready(function () {
 	for (let i = 0; i < $(".select").length; i++) {
 		let current = $(".select__current");
