@@ -49,6 +49,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: auto;
+  overflow-x: hidden;
   -webkit-transform: translate(-20%, 0);
       -ms-transform: translate(-20%, 0);
           transform: translate(-20%, 0);
@@ -90,7 +91,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  overflow: hidden;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;

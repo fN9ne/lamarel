@@ -189,16 +189,6 @@ $(window).on("load", function () {
 	}, 2500);
 });
 $(document).ready(function () {
-	if ($(".order-link").length > 0) {
-		$(".order-link").click(function() {
-			$("body").addClass("_lock");
-			$(".order-popup").addClass("_active");
-		});
-		$(".order-popup__close").click(function() {
-			$("body").removeClass("_lock");
-			$(".order-popup").removeClass("_active");
-		});
-	}
 	for (let i = 0; i < $(".select").length; i++) {
 		let current = $(".select__current");
 		let list = $(".select__list");
