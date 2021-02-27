@@ -96,10 +96,17 @@ $(document).ready(function() {
 	const work = $(".portfolio__item");
 	let qty = work.length;
 	// category.click(fun)
-	if ($(window).width() <= 585) {
-		category.click(function() {
-			$(this).toggleClass("_active");
-			$(".categories__list").toggleClass("_active");
-		});
-	}
+	function MobileCategories () {
+		if ($(window).width() <= 585) {
+			category.click(function() {
+				$(this).toggleClass("_active");
+				$(".categories__list").toggleClass("_active");
+				$(".categories__area").toggleClass("_active");
+			});
+		} else {
+			category.unbind("click");
+		}
+	};
+	MobileCategories();
+	$(window).on("resize", MobileCategories);
 });
