@@ -91,20 +91,63 @@ $(document).ready(function() {
 		width = parseFloat(width);
 		$(".portfolio__item").css("height", width);
 	};
-	const category = $(".category");
 	const clear = $(".category[data-filter=clear]");
 	const work = $(".portfolio__item");
 	let qty = work.length;
-	// category.click(fun)
 	function MobileCategories () {
 		if ($(window).width() <= 585) {
-			category.click(function() {
-				$(this).toggleClass("_active");
-				$(".categories__list").toggleClass("_active");
-				$(".categories__area").toggleClass("_active");
+			category = $(".category");
+			category.unbind("click");
+			category.click(function(e) {
+				const list = $(".categories__list");
+				const current = $(".categories__current");
+				let current_item = $(".categories__current").find(".category");
+				if (e.target.closest(".categories__current")) {
+					$(this).toggleClass("_active");
+					$(".categories__list").toggleClass("_active");
+					$(".categories__area").toggleClass("_active");
+					$("body").toggleClass("_lock");
+				}
+				if (e.target.closest(".categories__list")) {
+					current_item.removeClass("_current");
+					list.append(current_item);
+					current.append(e.target);
+					$(this).addClass("_current");
+					$(".categories__list").removeClass("_active");
+					$(".categories__area").removeClass("_active");
+					$("body").removeClass("_lock");
+					let filter = $(this).attr("data-filter");
+					category.removeClass("_current");
+					$(`.category[data-filter=${filter}]`).addClass("_current");
+					if (filter == "clear") {
+						work.removeClass("_hidden");
+					} else {
+						work.addClass("_hidden");
+						$(`.portfolio__item[data-category=${filter}]`).removeClass("_hidden");
+					}
+					isotopePortfolio();
+				}
 			});
 		} else {
+			category = $(".category");
 			category.unbind("click");
+			category.click(function() {
+				category.removeClass("_current");
+				$(this).addClass("_current");
+				let filter = $(this).attr("data-filter");
+
+				$(".categories__list").find(`.category[data-filter=${filter}]`).addClass("_current");
+				$(".categories__list").append($(".categories__current").find(".category"));
+				$(".categories__current").append($(".categories__list").find(`.category[data-filter=${filter}]`));
+
+				if (filter == "clear") {
+					work.removeClass("_hidden");
+				} else {
+					work.addClass("_hidden");
+					$(`.portfolio__item[data-category=${filter}]`).removeClass("_hidden");
+				}
+				isotopePortfolio();
+			});
 		}
 	};
 	MobileCategories();

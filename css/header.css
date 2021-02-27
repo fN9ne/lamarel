@@ -227,6 +227,14 @@
   color: #7261ed;
 }
 
+.header-on-page .lang-header__current._active li {
+  color: #fafafa;
+}
+
+.header-on-page .lang-header__current._active li:before {
+  background: url("../img/dropdown-arrow.svg") 0 0/100% auto no-repeat;
+}
+
 .header-on-page .menu__item a {
   color: rgba(14, 14, 14, 0.3);
   -webkit-transition: 0.3s all ease;
