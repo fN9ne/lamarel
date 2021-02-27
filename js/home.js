@@ -82,6 +82,12 @@ function responsiveFontOnBlock(el, parent, mode = 0) {
 };;
 $(document).ready(function () {
 	let main_block_height = parseFloat($(".main-screen").css("height"));
+	function mainBlockHeight() {
+		let height = $(window).height();
+		let screen = $(".main-screen");
+		screen.css("height", height);
+	}
+	mainBlockHeight();
 	$(window).on("resize", function() {
 		mainBlockHeight();
 	});

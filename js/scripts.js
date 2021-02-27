@@ -189,17 +189,6 @@ $(window).on("load", function () {
 	}, 2500);
 });
 $(document).ready(function () {
-	function mainBlockHeight() {
-		let height = $(window).height();
-		let screen = $(".main-screen");
-		screen.css("height", height);
-	}
-	mainBlockHeight();
-	let vh = $(window).height() * 0.01;
-	document.documentElement.style.setProperty("--vh", `${vh}px`);
-	$(window).on("resize", function () {
-		mainBlockHeight();
-	});
 	for (let i = 0; i < $(".select").length; i++) {
 		let current = $(".select__current");
 		let list = $(".select__list");

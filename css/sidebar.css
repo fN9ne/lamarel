@@ -320,7 +320,6 @@
   display: -ms-flexbox;
   display: flex;
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
   opacity: 0;
   visibility: hidden;
   overflow: hidden;
