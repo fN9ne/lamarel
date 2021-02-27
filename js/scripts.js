@@ -192,11 +192,7 @@ $(document).ready(function () {
 	function mainBlockHeight() {
 		let height = $(window).height();
 		let screen = $(".main-screen");
-		let sb = $(".sidebar");
-		let sb_cnt = $(".sidebar__content");
 		screen.css("height", height);
-		sb.css("height", height);
-		sb_cnt.css("height", height);
 	};
 	mainBlockHeight();
 	$(window).on("resize", function() {
