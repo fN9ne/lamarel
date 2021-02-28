@@ -47,6 +47,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-mobile:before {
+  content: "\e90c";
+}
+
+.icon-instagram:before {
+  content: "\e909";
+}
+
+.icon-telegram:before {
+  content: "\e90a";
+}
+
+.icon-email:before {
+  content: "\e90b";
+}
+
 .icon-analyze:before {
   content: "\e904";
 }

@@ -245,6 +245,11 @@
           align-items: center;
 }
 
+.steps-services__title {
+  margin: 0 0 70px 0;
+  font-size: calc(25px + 25 * ((100vw - 320px) / (1920 - 320)));
+}
+
 .steps-services__content {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -260,6 +265,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.nav-services__title {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 0 calc(35px + 15 * ((100vw - 375px) / (1440 - 375))) 0;
+  font-size: calc(30px + 20 * ((100vw - 375px) / (1920 - 375)));
 }
 
 .nav-services__item {
