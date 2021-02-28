@@ -54,6 +54,7 @@ $(document).ready(function () {
       cnt.removeClass("_move");
       if (CheckAction() < -200) {
         $(".popup").removeClass("_active");
+        $("body").removeClass("_lock");
         cnt.css("bottom", "-100vh")
       } else {
         cnt.css("bottom", 0);
