@@ -18,6 +18,8 @@
   overflow: auto;
   overflow-x: hidden;
   padding: 40px 40px;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: contain;
 }
 
 .popup._active {
@@ -36,9 +38,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: contain;
 }
 
 .popup__content {
+  -ms-scroll-chaining: none;
+      overscroll-behavior: contain;
   background: -webkit-gradient(linear, left top, left bottom, from(#7261ED), to(#4A19B3));
   background: -o-linear-gradient(top, #7261ED 0%, #4A19B3 100%);
   background: linear-gradient(180deg, #7261ED 0%, #4A19B3 100%);
