@@ -1,4 +1,5 @@
 RewriteEngine On
 RewriteBase /
 #RewriteRule (.*)\\\\\\\\.html$ $1
-ErrorDocument 404 /404.html
+#404 Страница не найдена
+ErrorDocument 404 http://fn9ne.github.io/lamarel/404.html
