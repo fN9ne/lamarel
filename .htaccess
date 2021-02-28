@@ -1,2 +1,2 @@
-RewriteCond %{REQUEST_URI} ^/test/$
-RewriteRule ^.*$ http://site.ru/new-test/? [R=301,L]
+RewriteEngine On
+Redirect 301 /index.html http://www.fn9ne.github.io/asd.html
