@@ -1,1 +1,2 @@
-Redirect 301 /services/ https://www.fn9ne.github.io/lamarel/design.html
+RewriteCond %{REQUEST_URI} ^/test/$
+RewriteRule ^.*$ http://site.ru/new-test/? [R=301,L]
