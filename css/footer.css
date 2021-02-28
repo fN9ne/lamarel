@@ -13,27 +13,6 @@
   /* основное | general */
 }
 
-.footer:before {
-  content: '';
-  width: 33px;
-  height: 33px;
-  position: absolute;
-  bottom: 100%;
-  background: #4a19b3;
-  left: 0;
-}
-
-.footer:after {
-  content: '';
-  width: 66px;
-  height: 66px;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 100%;
-  background: #f4f4f4;
-  left: 0;
-}
-
 .footer__container {
   padding: 0 calc(20px + 70 * ((100vw - 768px) / (1920 - 768))) 0 calc(20px + 25 * ((100vw - 768px) / (1920 - 768)));
 }
@@ -109,6 +88,7 @@
 
 .footer__item {
   margin: 0 0 10px 0;
+  cursor: pointer;
 }
 
 .footer__item:last-child {
@@ -150,14 +130,6 @@
 
   .footer {
     padding: 30px 0;
-  }
-
-  .footer:before {
-    display: none;
-  }
-
-  .footer:after {
-    display: none;
   }
 
   .footer__container {

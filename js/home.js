@@ -1,37 +1,3 @@
-const animItems = document.querySelectorAll('._anim-items');
-
-if (animItems.length > 0) {
-	window.addEventListener('scroll', animOnScroll);
-	function animOnScroll() {
-		for (let index = 0; index < animItems.length; index++) {
-			const animItem = animItems[index];
-			const animItemHeight = animItem.offsetHeight;
-			const animItemOffset = offset(animItem).top;
-			const animStart = 4;
-
-			let animItemPoint = window.innerHeight - animItemHeight / animStart;
-
-			if(animItemHeight > window.innerHeight) {
-				animItemPoint = window.innerHeight - window.innerHeight / animStart;
-			}
-
-			if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
-				animItem.classList.add('_active');
-			} else {
-				if (!animItem.classList.contains('_anim-no-hide')) {
-					animItem.classList.remove('_active');
-				}
-			}
-		}
-	}
-	function offset(el) {
-		const rect = el.getBoundingClientRect(),
-			scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-		return { top: rect.top +scrollTop, left: rect.left + scrollLeft }
-	}
-	animOnScroll();
-};
 /*!
  * imagesLoaded PACKAGED v4.1.4
  * JavaScript is all like "You images are done yet or what?"
@@ -276,17 +242,6 @@ $(document).ready(function () {
 			total_time = (+D * 86400) + (+H * 3600) + (+M * 60) + +S;
 		}, 1000);
 	};
-	if ($(".about-us__tab").length > 0) {
-		let tab = $(".about-us__tab");
-		let content = $(".about-us-slide");
-		tab.click(function() {
-			i = $(this).index();
-			tab.removeClass("_current");
-			content.removeClass("_current");
-			$(this).addClass("_current");
-			content.eq(i).addClass("_current");
-		});
-	}
 	new Swiper('.feedback__content', {
 		navigation: {
 			nextEl: '.swiper-button-next',

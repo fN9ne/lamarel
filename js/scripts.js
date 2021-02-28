@@ -1,3 +1,37 @@
+const animItems = document.querySelectorAll('._anim-items');
+
+if (animItems.length > 0) {
+	window.addEventListener('scroll', animOnScroll);
+	function animOnScroll() {
+		for (let index = 0; index < animItems.length; index++) {
+			const animItem = animItems[index];
+			const animItemHeight = animItem.offsetHeight;
+			const animItemOffset = offset(animItem).top;
+			const animStart = 4;
+
+			let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+			if(animItemHeight > window.innerHeight) {
+				animItemPoint = window.innerHeight - window.innerHeight / animStart;
+			}
+
+			if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+				animItem.classList.add('_active');
+			} else {
+				if (!animItem.classList.contains('_anim-no-hide')) {
+					animItem.classList.remove('_active');
+				}
+			}
+		}
+	}
+	function offset(el) {
+		const rect = el.getBoundingClientRect(),
+			scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		return { top: rect.top +scrollTop, left: rect.left + scrollLeft }
+	}
+	animOnScroll();
+};
 function testWebP(callback) {
 	var webP = new Image();
 	webP.onload = webP.onerror = function () {
@@ -183,6 +217,17 @@ function move(){
 move();
 */;
 $(document).ready(function () {
+	if ($(".pretty-tab").length > 0) {
+		let tab = $(".pretty-tab");
+		let content = $(".pretty-tab-slide");
+		tab.click(function() {
+			i = $(this).index();
+			tab.removeClass("_current");
+			content.removeClass("_current");
+			$(this).addClass("_current");
+			content.eq(i).addClass("_current");
+		});
+	}
 	let vh = $(window).height() * 0.01;
 	document.documentElement.style.setProperty('--vh', `${vh}px`);
 	for (let i = 0; i < $(".select").length; i++) {
@@ -238,7 +283,7 @@ $(document).ready(function () {
 			} else {
 				console.log(
 					"Не корректное значение для функции! | Incorrect value for function!"
-				);
+					);
 			}
 		}
 
@@ -308,4 +353,8 @@ $(document).ready(function () {
 			}
 		});
 	}
+	/* current year */
+	let date = new Date();
+	let year = date.getFullYear();
+	$("footer").find("#year").html(year);
 });
